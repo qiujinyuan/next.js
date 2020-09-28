@@ -54,6 +54,7 @@ const nextDev: cliCommand = argv => {
   const port = args['--port'] || 3000
   const appUrl = `http://${args['--hostname'] || 'localhost'}:${port}`
 
+  // READ: 在 unistore 中记录启动的 appUrl, unistore 订阅状态更新，检测到更新后打印启动日志
   startedDevelopmentServer(appUrl)
 
   startServer(
