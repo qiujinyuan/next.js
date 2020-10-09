@@ -1,13 +1,11 @@
 {
   "compilerOptions": {
     "strict": true,
-    "module": "commonjs",
-    "target": "es5",
+    "module": "esnext",
+    "target": "ES2017",
     "esModuleInterop": true,
     "moduleResolution": "node",
-    "jsx": "react",
-    "outDir": "out",
-    "sourceMap": true
+    "jsx": "react"
   },
   "exclude": ["dist", "./*.d.ts"]
 }

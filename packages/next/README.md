@@ -35,3 +35,8 @@ Please see our [contributing.md](/contributing.md).
 - Tony Kovanen ([@tonykovanen](https://twitter.com/tonykovanen)) – [ZEIT](https://zeit.co)
 - Guillermo Rauch ([@rauchg](https://twitter.com/rauchg)) – [ZEIT](https://zeit.co)
 - Dan Zajdband ([@impronunciable](https://twitter.com/impronunciable)) – Knight-Mozilla / Coral Project
+
+## debug
+
+1. 根目录下运行 `yarn dev`, 修改代码后自动重新编译，新开窗口运行 `yarn types` 生成声明文件
+2. 新开窗口运行 `yarn next ./test/integration/basic` 或 f5 开始调试，打印相关日志，查看修改结果

@@ -61,6 +61,7 @@ import {
   setSprCache,
 } from './spr-cache'
 import { isBlockedPage } from './utils'
+import { info } from '../../build/output/log'
 
 const getCustomRouteMatcher = pathMatch(true)
 
@@ -145,7 +146,9 @@ export default class Server {
     this.quiet = quiet
     const phase = this.currentPhase()
     this.nextConfig = loadConfig(phase, this.dir, conf)
+    // READ：默认为 .next 目录
     this.distDir = join(this.dir, this.nextConfig.distDir)
+    info(this.distDir) // READ: /Users/yuangqiu/code/open-source-projects/next.js/examples/basic-css/.next
     this.publicDir = join(this.dir, CLIENT_PUBLIC_FILES_PATH)
     this.hasStaticDir = fs.existsSync(join(this.dir, 'static'))
 
@@ -159,6 +162,7 @@ export default class Server {
       compress,
     } = this.nextConfig
 
+    // READ： 子类重写该方法，next-dev-server 返回 'development'
     this.buildId = this.readBuildId()
 
     this.renderOpts = {
@@ -324,7 +328,7 @@ export default class Server {
     dynamicRoutes: DynamicRoutes | undefined
   } {
     this.customRoutes = this.getCustomRoutes()
-
+    info('next-server this.customRoutes', JSON.stringify(this.customRoutes))
     const publicRoutes = fs.existsSync(this.publicDir)
       ? this.generatePublicRoutes()
       : []

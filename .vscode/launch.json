@@ -7,10 +7,11 @@
     {
       "type": "node",
       "request": "launch",
-      "name": "next",
-      "program": "${workspaceFolder}/packages/next/bin/next.ts",
-      "preLaunchTask": "tsc: 构建 - packages/next/tsconfig.json",
-      "outFiles": ["${workspaceFolder}/out/**/*.js"]
+      "name": "yarn next ./examples/basic-css/",
+      "runtimeExecutable": "yarn",
+      "runtimeArgs": ["next", "./examples/basic-css/"],
+      "port": 9229,
+      "skipFiles": ["<node_internals>/**"]
     }
   ]
 }

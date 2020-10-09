@@ -43,7 +43,6 @@
     "next": "./dist/bin/next"
   },
   "scripts": {
-    "dev": "ts-node-dev ./bin/next.ts",
     "build": "taskr",
     "release": "taskr release",
     "prepublish": "npm run release && yarn types",

@@ -31,6 +31,7 @@ import ErrorDebug from './error-debug'
 import HotReloader from './hot-reloader'
 import { findPageFile } from './lib/find-page-file'
 import Worker from 'jest-worker'
+import { info } from '../build/output/log'
 
 if (typeof React.Suspense === 'undefined') {
   throw new Error(
@@ -364,7 +365,7 @@ export default class DevServer extends Server {
 
   generateRoutes() {
     const { fsRoutes, ...otherRoutes } = super.generateRoutes()
-
+    info('next-dev-server this.customRoutes', JSON.stringify(this.customRoutes))
     // In development we expose all compiled files for react-error-overlay's line show feature
     // We use unshift so that we're sure the routes is defined before Next's default routes
     fsRoutes.unshift({
